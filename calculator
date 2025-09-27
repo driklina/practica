@@ -1,0 +1,21 @@
+import tkinter as tk  
+def calculate():  
+    try:  
+        result = eval(entry.get())  # Преобразует строку в математическое выражение  
+        label_result.config(text=f"Результат: {result}")  
+    except Exception as e:  
+        label_result.config(text="Ошибка!")  
+# Создаём главное окно  
+root = tk.Tk()  
+root.title("Калькулятор")  
+# Поле ввода  
+entry = tk.Entry(root, width=30)  
+entry.grid(row=0, column=0, columnspan=2)  
+# Кнопка расчёта  
+button = tk.Button(root, text="Рассчитать", command=calculate)  
+button.grid(row=1, column=0, columnspan=2)  
+# Метка для вывода результата  
+label_result = tk.Label(root, text="Результат: ")  
+label_result.grid(row=2, column=0, columnspan=2)  
+# Запуск главного цикла  
+root.mainloop()   
